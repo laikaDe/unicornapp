@@ -2,7 +2,7 @@ class CreateUnicorns < ActiveRecord::Migration[6.1]
   def change
     create_table :unicorns do |t|
       t.string :name
-      t.string :age
+      t.integer :age
       t.string :color
       t.string :personality
       t.string :quirks

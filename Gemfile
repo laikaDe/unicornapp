@@ -61,6 +61,8 @@ group :development do
   gem 'spring'
   # Make errors better looking
   gem 'better_errors' , '~> 2.4'
+  #renames app
+  gem 'rename', '~> 1.0', '>= 1.0.8'
 end
 
 group :test do
