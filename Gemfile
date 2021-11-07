@@ -32,8 +32,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
-# Make errors better looking
-gem 'better_errors' , '~> 2.4'
 
 # A modern CSS framework based on Flexbox
 gem 'bulma-rails', '~> 0.9.2'
@@ -61,6 +59,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Make errors better looking
+  gem 'better_errors' , '~> 2.4'
 end
 
 group :test do
