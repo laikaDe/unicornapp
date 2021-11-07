@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 # Make errors better looking
-get 'better_errors' , '~> 2.4'
+gem 'better_errors' , '~> 2.4'
 
 # A modern CSS framework based on Flexbox
 gem 'bulma-rails', '~> 0.9.2'
@@ -45,7 +45,10 @@ gem 'simple_form', '~> 5.1'
 gem 'guard', '~> 2.18'
 
 # Guard::LiveReload automatically reloads your browser when 'view' files are modified.
-gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+group :development do
+  gem 'guard-livereload', '~> 2.5', require: false
+end
+
 
 
 
