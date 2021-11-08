@@ -1,6 +1,7 @@
 class UnicornsController < ApplicationController
 
     def index
+        @unicorns = Unicorn.all.order("created_at DESC")
     end
 
     def new 
