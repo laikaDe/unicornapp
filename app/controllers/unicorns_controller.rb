@@ -24,6 +24,13 @@ class UnicornsController < ApplicationController
         @unicorn = Unicorn.find(params[:id])
     end
 
+    def update
+        @unicorn = Unicorn
+    end
+
+    def edit 
+    end
+
     private 
 
     def unicorn_params
