@@ -25,10 +25,23 @@ class UnicornsController < ApplicationController
     end
 
     def update
-        @unicorn = Unicorn
+        @unicorn = Unicorn.find(params[:id])
+
+        if @unicorn.update(unicorn_params)
+            redirect_to @unicorn
+        else
+            render 'edit'
+        end
     end
 
     def edit 
+        @unicorn = Unicorn.find(params[:id])
+    end
+
+    def destroy
+        @unicorn = Unicorn.find(params[:id])
+        @unicorn.destroy
+        redirect_to root_path
     end
 
     private 
