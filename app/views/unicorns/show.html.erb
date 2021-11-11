@@ -38,4 +38,18 @@
 		<b>Quirks:</b> <%= @unicorn.quirks %>
 		</div>
 	</div>
+
+	<section class="section superpowers">
+	<div class="container">
+		<h2 class="subtitle is-5"><strong><%= @unicorn.superpowers.count %></strong> Superpowers</h2>
+		<%= render @unicorn.superpowers %>
+		<div class="comment-form">
+			<hr />
+			<h3 class="subtitle is-3">Create a Superpower</h3>
+	 		<%= render 'superpowers/form' %>
+		</div>
+	</div>
 </section>
+
+</section>
+

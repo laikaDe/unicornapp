@@ -1,0 +1,15 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= superpower.type %>:</strong>
+          <%= superpower.description %>
+        </p>
+      </div>
+    </div>
+     <%= link_to 'Delete', [superpower.unicorn, superpower],
+                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+  </article>
+
+</div>
