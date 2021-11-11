@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_09_214828) do
+ActiveRecord::Schema.define(version: 2021_11_09_215305) do
 
   create_table "superpowers", force: :cascade do |t|
     t.string "type"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "unicorn_id"
   end
 
   create_table "unicorns", force: :cascade do |t|
