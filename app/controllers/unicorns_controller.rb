@@ -1,5 +1,7 @@
 class UnicornsController < ApplicationController
 
+    before_action :find_unicorn, only: [:show, :update, :edit, :destroy]
+
     def index
         @unicorns = Unicorn.all.order("created_at DESC")
     end
@@ -21,11 +23,9 @@ class UnicornsController < ApplicationController
     end
 
     def show
-        @unicorn = Unicorn.find(params[:id])
     end
 
     def update
-        @unicorn = Unicorn.find(params[:id])
 
         if @unicorn.update(unicorn_params)
             redirect_to @unicorn
@@ -35,11 +35,9 @@ class UnicornsController < ApplicationController
     end
 
     def edit 
-        @unicorn = Unicorn.find(params[:id])
     end
 
     def destroy
-        @unicorn = Unicorn.find(params[:id])
         @unicorn.destroy
         redirect_to root_path
     end
@@ -48,5 +46,9 @@ class UnicornsController < ApplicationController
 
     def unicorn_params
         params.require(:unicorn).permit(:name, :age, :color, :personality, :quirks)
+    end
+
+    def find_unicorn
+        @unicorn = Unicorn.find(params[:id])
     end
 end
