@@ -1,22 +1,29 @@
 class UsersController < ApplicationController
+    skip_before_action :verified_user, only: [:new, :create]
 
+  #get request going to render out the user form
     def new
         @user = User.new
     end
 
-    def create 
-        @user = User.new(user_params)
-        if @user.save
-            flash[:notice] = "User created."
-            redirect_to root_path
-        else
-            render 'new'
-        end
+    def create
+        @user = User.find_by(username:params[:username])
+        if !@user
+            @error = "I'm sorry, that username is incorrect"
+            render :new
+        elsif !user.authenticate(params[:password])
+            @error =  "Password was Incorrect"
+            render :new  
+        else 
+            session[:user_id] = @user.id
+            redirect_to unicorns_path 
+        end 
     end
+  end 
 
-    private
 
-    def user_params
-        params.require(:user).permit(:username, :password)
-    end
+  private 
+  def user_params
+    params.require(:user).permit(:username,:password)
+  end 
 end
