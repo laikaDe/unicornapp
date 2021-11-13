@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_11_225705) do
+ActiveRecord::Schema.define(version: 2021_11_09_215305) do
 
   create_table "superpowers", force: :cascade do |t|
     t.string "type"
@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(version: 2021_11_11_225705) do
     t.string "color"
     t.string "personality"
     t.string "quirks"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
