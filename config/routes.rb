@@ -3,12 +3,9 @@ Rails.application.routes.draw do
   resources :unicorns do 
     resources :superpowers
   end
-  root "unicorns#index"
-  get "signup", to: "users#new"
-  get "login", to: "sessions#new"
-  post "login", to: "sessions#create"
-  delete "logout", to: "sessions#destroy"
-  resources :users, except: [:new]
+  root to: 'static#home'
+  get "login", to: "users#login", as:"login"
+  
 
   # match '/auth/:google_oauth2/callback'
 end
