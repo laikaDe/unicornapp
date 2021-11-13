@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   resources :unicorns do 
     resources :superpowers
   end
-  root to: 'static#home'
-  get "login", to: "users#login", as:"login"
-  
+  root to: 'static#home'  
 
   # match '/auth/:google_oauth2/callback'
 end
