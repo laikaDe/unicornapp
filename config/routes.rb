@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :unicorns do 
     resources :superpowers
   end
+  resources :users do
+    resources :unicorns
+  end
   root to: 'static#home'  
 
   # match '/auth/:google_oauth2/callback'
