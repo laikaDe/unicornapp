@@ -24,10 +24,12 @@
 	            <span></span>
 	          </span>
 	        </div>
+			<% if  user_signed_in? %>
 	        <div id="navbarMenuHeroA" class="navbar-menu">
 	          <div class="navbar-end">
 	            <%= link_to "Create New Unicorn", new_unicorn_path, class:"navbar-item" %>
 	          </div>
+			<% end %>
 	        </div>
 	      </div>
 	    </nav>
