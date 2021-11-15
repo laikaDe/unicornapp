@@ -13,10 +13,11 @@ class UnicornsController < ApplicationController
     end
 
     def create 
-        @unicorn = Unicorn.new(unicorn_params)
+        @user = User.find(current_user.id)
+        @unicorn = @user.unicorns.create(unicorn_params)
 
         if @unicorn.save
-            redirect_to @unicorn
+            redirect_to user_unicorns_path(current_user.id)
         else
             render 'new'
         end
@@ -41,7 +42,7 @@ class UnicornsController < ApplicationController
 
     def destroy
         @unicorn.destroy
-        redirect_to root_path
+        redirect_to user_unicorn_path(current_user.id, @unicorn)
     end
 
     private 
