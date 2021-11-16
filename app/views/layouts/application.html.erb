@@ -19,7 +19,7 @@
 	    <nav class="navbar">
 	      <div class="container">
 	        <div class="navbar-brand">
-			<% if  user_signed_in? %>
+			<% if  current_user %>
 	          <%= link_to 'Unicorns', user_unicorns_path(current_user.id), class: "navbar-item" %>
 	          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
 	            <span></span>

@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 #Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.8'
+#Simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 gem 'omniauth'
 gem 'dotenv-rails'
