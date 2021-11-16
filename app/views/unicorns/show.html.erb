@@ -16,7 +16,7 @@
 		    	<%= link_to "Edit", edit_user_unicorn_path(current_user.id, @unicorn), class:"button" %>
 		  	</p>
 		  	<p class="level-item">
-				<%= link_to "Delete", user_unicorns_path(current_user.id), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+				<%= link_to "Delete", user_unicorn_path(current_user.id, @unicorn), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
 				</p>
 		  </div>
 		</nav>

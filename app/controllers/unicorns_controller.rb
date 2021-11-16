@@ -12,7 +12,7 @@ class UnicornsController < ApplicationController
         @unicorn = Unicorn.new
     end
 
-    def create 
+    def create
         @user = User.find(current_user.id)
         @unicorn = @user.unicorns.create(unicorn_params)
 
@@ -42,7 +42,7 @@ class UnicornsController < ApplicationController
 
     def destroy
         @unicorn.destroy
-        redirect_to user_unicorn_path(current_user.id, @unicorn)
+        redirect_to user_unicorns_path(current_user.id)
     end
 
     private 

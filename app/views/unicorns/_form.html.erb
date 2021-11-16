@@ -1,5 +1,5 @@
 <div class="section">
-  <%= simple_form_for @unicorn do |f| %>
+  <%= simple_form_for [current_user, @unicorn] do |f| %>
   <div class="field">
      <div class="control">
      <%= f.input :name, input_html: {class: 'input'}, wrapper: false, label_html: {class: 'label'} %>
