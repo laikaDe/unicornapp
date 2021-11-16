@@ -1,15 +1,7 @@
 class ApplicationController < ActionController::Base
-
     before_action :authenticate_user!
-
-#     helper_method :current_user, :logged_in?
-    
-#     def current_user
-#         User.find(session[:user_id]) 
-#     end
- 
-#    def logged_in?
-#        !!current_user
-#    end
+    rescue_from CanCan::AccessDenied do |exception|
+        redirect_to root_url, :alert => exception.message
+    end
 
 end
