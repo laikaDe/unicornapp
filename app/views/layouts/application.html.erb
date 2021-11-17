@@ -58,6 +58,7 @@
 	<%= link_to 'Account Settings', edit_user_registration_path%>
   <% else %>
     <%= link_to 'Log in', new_user_session_path %>
+	<%= button_to "Google Log in", "/auth/google_oauth2", method: :post, class: "btn btn-primary" %>
 	<%= link_to 'Sign up', new_user_registration_path %>
   <% end %>
 

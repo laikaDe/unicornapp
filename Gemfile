@@ -30,6 +30,7 @@ gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'omniauth'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
