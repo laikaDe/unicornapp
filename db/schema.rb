@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_220530) do
+ActiveRecord::Schema.define(version: 2021_11_15_223513) do
 
   create_table "superpowers", force: :cascade do |t|
     t.string "type"
