@@ -3,7 +3,7 @@ class UnicornsController < ApplicationController
     before_action :find_unicorn, only: [:show, :update, :edit, :destroy]
 
     def index
-        @unicorns = Unicorn.all.order("created_at DESC")
+        @unicorns = current_user.unicorns.order("created_at DESC")
     end
 
     def new 
@@ -21,13 +21,12 @@ class UnicornsController < ApplicationController
         else
             render 'new'
         end
-
         
     end
 
     def show
-        unless session[:user_id] == @unicorn.user_id
-            flash[:notice] = "You don't have access to that order!"
+        unless current_user.id == @unicorn.user_id
+            flash[:notice] = "You don't have access to that unicorn!"
             redirect_to user_unicorns_path(current_user.id)
             return
         end
