@@ -1,6 +1,17 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :verified_user, only: [:new, :create]
+    # in charge of loggin user in/out & oumniauth
+    # creating or destroying a sesssion
+
+    # skip_before_action :verified_user, only: [:new, :create]
+
+    def omniauth
+        User.find_by_or_create_by(uid: auth['uid'], provider: auth['provider']) do  |u|
+            u.username = auth['info']['first_name']
+            u.email = auth['info'['email']
+            
+        end
+    end
 
     def signup
         @user = User.new

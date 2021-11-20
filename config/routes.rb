@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'static#home'  
-  get '/auth/google_oauth2/callback', to: 'omniauth_callbacks#google'
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
 
   # match '/auth/:google_oauth2/callback'
 end
