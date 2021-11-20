@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_223513) do
+ActiveRecord::Schema.define(version: 2021_11_20_051737) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+  end
+
+  create_table "google_accounts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name"
+    t.string "username"
+    t.string "image"
+    t.string "token"
+    t.string "secret"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_google_accounts_on_user_id"
+  end
 
   create_table "superpowers", force: :cascade do |t|
     t.string "type"
@@ -40,8 +62,11 @@ ActiveRecord::Schema.define(version: 2021_11_15_223513) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "google_accounts", "users"
 end

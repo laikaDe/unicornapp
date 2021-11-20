@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:google]
 
 #     helper_method :current_user, :logged_in?
     
