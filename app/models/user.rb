@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-
+  
+  # has_secure_password # validation presence of password
   has_many :unicorns
   has_many :google_accounts
   has_many :superpowers, through: :unicorns
