@@ -45,7 +45,7 @@
 		<%= render @unicorn.superpowers %>
 		<div class="comment-form">
 			<hr />
-			<%= link_to "Create a Superpower", user_unicorn_superpower_path(current_user.id,@unicorn)%>
+			<%= link_to "Create a Superpower", new_user_unicorn_superpower_path(current_user.id,@unicorn.id)%>
 
 		</div>
 	</div>

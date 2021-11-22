@@ -1,5 +1,5 @@
 
-<%= simple_form_for([@unicorn, @unicorn.superpowers.build]) do |f| %>
+<%= simple_form_for([current_user, @unicorn, @unicorn.superpowers.build]) do |f| %>
     <!--
     collection.build(attributes = {}, …) Returns one or more new objects of the collection type that have been instantiated with attributes and linked to this object through a foreign key, but have not yet been saved. Note: This only works if an associated object already exists, not if it‘s nil!
     -->
