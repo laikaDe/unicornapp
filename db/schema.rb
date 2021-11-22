@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_20_051737) do
+ActiveRecord::Schema.define(version: 2021_11_22_025736) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", null: false
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 2021_11_20_051737) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_google_accounts_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "superpowers", force: :cascade do |t|
