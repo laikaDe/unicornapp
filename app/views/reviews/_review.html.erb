@@ -1,0 +1,5 @@
+<p> <%= review.rating %> </p>
+<p> <%= review.comment %> </p>
+
+<%= link_to "Edit", edit_user_unicorn_superpower_review_path(current_user, @unicorn, review.superpower, review) %>
+<%= link_to "Delete", user_unicorn_superpower_review_path(current_user, @unicorn.id, review.superpower, review), method: :delete, data: {confirm: "Are you sure?"} %>	
