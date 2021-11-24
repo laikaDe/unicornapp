@@ -54,6 +54,7 @@
   <p class="alert"><%= alert %></p>
   <% if  user_signed_in? %>
 	<%= current_user.email %>
+	<%= link_to 'Rainbow Unicorns', user_rainbow_path(current_user.id)%>
 	<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
 	<%= link_to 'Account Settings', edit_user_registration_path%>
   <% else %>

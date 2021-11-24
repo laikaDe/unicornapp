@@ -3,13 +3,11 @@ class UnicornsController < ApplicationController
     before_action :find_unicorn, only: [:show, :update, :edit, :destroy]
 
 
-
-
     def index
         @unicorns = current_user.unicorns.order("created_at DESC")
     end
 
-    def all_rainbow_unicorns
+    def rainbow
         @rainbow_unicorns = current_user.unicorns.rainbow
     end
 

@@ -1,0 +1,19 @@
+<%= flash[:message]%>
+
+<% content_for :page_title, "Unicorns" %>
+
+<div class="section">
+	<div class="container">
+		<% @rainbow_unicorns.each do |unicorn| %>
+			<div class="card">
+		  <div class="card-content">
+		    <div class="media">
+		      <div class="media-content">
+		        <p class="title is-4"><%= link_to unicorn.name, user_unicorn_path(current_user.id,unicorn)  %></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<% end %>
+	</div>
+</div>
