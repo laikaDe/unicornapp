@@ -1,7 +1,16 @@
 <h1> Here's Your Review </h1>
 <%= simple_form_for ([current_user, @unicorn , @superpower, @review]) do |f| %>
 
-<%= f.input :rating %>
+    <div id = “rating-form”>
+     <label> Rating</label>
+    </div>
 <%= f.input :comment %>
 <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
+
+<script>
+$(‘#rating-form’).raty({
+path: ‘/assets/’,
+scoreName: ‘review[rating]’
+});
+</script>

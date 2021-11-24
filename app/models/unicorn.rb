@@ -3,4 +3,5 @@ class Unicorn < ApplicationRecord
     has_many :superpowers
     has_many :reviews, through: :superpowers
     belongs_to :user
+    scope :rainbow, -> { where(color: 'rainbow') }
 end
