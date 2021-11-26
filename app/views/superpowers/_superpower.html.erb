@@ -10,9 +10,9 @@
     </div>
     <%= render superpower.reviews %>
     <div>
-    <%= link_to "Add Review", new_user_unicorn_superpower_review_path(current_user.id, @unicorn.id, superpower.id) %>
+    <%= link_to "Add Review", new_unicorn_superpower_review_path(@unicorn, superpower) %>
     </div>
-     <%= link_to 'Delete', [current_user, superpower.unicorn, superpower],
+     <%= link_to 'Delete', [superpower.unicorn, superpower],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
   </article>
 

@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
         
         if user.valid?
             sign_in_and_redirect user
-            # redirect_to new_user_unicorn_path(user.id)
         else
             flash[:message] = user.errors.full_messages.join(" ,")
             redirect_to root_path

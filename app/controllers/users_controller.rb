@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+    
     skip_before_action :verified_user, only: [:new, :create]
 
-    #get request going to render out the user form
     def new
         @user = User.new
     end

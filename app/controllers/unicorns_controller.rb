@@ -12,8 +12,6 @@ class UnicornsController < ApplicationController
     end
 
     def new 
-        #1. Calls unicorn model 
-        #2. Tells it to create new unicorn
         @unicorn = Unicorn.new
     end
 

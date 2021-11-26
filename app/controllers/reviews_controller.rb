@@ -5,7 +5,6 @@ class ReviewsController < ApplicationController
     before_action :find_unicorn
     
     def index
-        byebug
     end
 
     def new 
